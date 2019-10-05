@@ -61,63 +61,30 @@ html
         img(src="images/ciclo_containers.png" style='width:90%; height:40%; margin: auto;')
 
       section
-        h2 Images
-        img(src="images/bespoke-logo.jpg")
+        h2 Uso de Volumes Locais no Docker
+
+        p Para que os dados persistam entre a criação de novos contêineres é necessário que um volume, que nada mais é do que um espaço persistente, seja disponibilizado para um Container.
+        img(src="images/docker_volumes.png" style='width:90%; height:40%; margin: auto;')
 
       section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-keys">bespoke-keys</a>
+        h2 Conectividade Entre Contêineres
 
-      section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-touch">bespoke-touch</a>
+        p Usando redes definidas por software (SDNs), é possível referenciar os serviços necessários para funcionamento de uma aplicação.
 
+        img(src="images/docker_networking.png" )
+  
       section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-scale">bespoke-scale</a>
+        h2 Docker Compose
 
-      section
-        h2 Bullet List
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-bullets">bespoke-bullets</a>
-        ul.build.build-items
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
+        p Configuração e dependências entre serviços de maneira declarativa.
 
+        img(src="images/docker_compose.png" style='width:80%; height: 60%; margin: auto;')
+  
       section
-        iframe(width="640", height="360", src="https://www.youtube.com/embed/AV3kYPutYfs?rel=0&amp;showinfo=0&amp;controls=0&amp;enablejsapi=1&amp;loop=1&amp;playlist=AV3kYPutYfs", frameborder="0", allowfullscreen, data-volume="0")
+        h2 E o que vem depois? Escala e Orquestradores
 
-      section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="https://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/PrismJS/prism">Prism</a>
-        pre
-          code.language-javascript.
-            (function() {
-              function hanoi(n, a, b, c) {
-                return n ? hanoi(n - 1, a, c, b)
-                    .concat([[a, b]])
-                    .concat(hanoi(n - 1, c, b, a)) : [];
-              }
-              return hanoi(3, 'left', 'right', 'mid')
-                .map(function(d) {
-                  return d[0] + ' -&gt; ' + d[1];
-                });
-            })();
+        P Docker Swarm Mode, Mesos/Marathon/ Kubernetes
 
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>data-bespoke-hash</em> attribute.
-      section
-        h2.bullet Just the beginning…
-        ul.build.build-items
-          li Edit <a href="https://pugjs.org">Pug (formerly Jade)</a> markup in <em class="path">src/index.pug</em>
-          li Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em>
-          li Edit JavaScript in <em class="path">src/scripts/main.js</em>
-        br
-        ul.build
-          li
-            strong Enjoy! :)
-            a(href='https://twitter.com/markdalgleish')  -@markdalgleish
+        img(src="images/docker_swarm.png" style='width:80%; height: 60%; margin: auto;')
 
     script(src='build/build.js')
