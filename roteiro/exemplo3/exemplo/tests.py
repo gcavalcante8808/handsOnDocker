@@ -1,10 +1,13 @@
-import pytest
-import os
-from falcon import testing
 
-import app
+from falcon import testing
 from models.Quotes import Quote
 from utils.db import setup_db
+from utils.logger import get_test_logger
+
+import os
+import pytest
+
+import app
 
 
 @pytest.fixture()
@@ -49,3 +52,12 @@ def test_list_quotes(client, db_session, remove_db_files):
     assert 'id' in return_quote
     assert 'quote' in return_quote
     assert return_quote.get('quote') == quote.quote
+
+
+def test_generate_logs_when_a_client_retrieves_quotes(client):
+    logger = get_test_logger()
+
+    client.simulate_get('/quotes')
+
+    assert hasattr(logger.handlers[0], 'last_message')
+    assert '0 quotes read.' in logger.handlers[0].last_message
