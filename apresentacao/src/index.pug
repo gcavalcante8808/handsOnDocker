@@ -1,0 +1,123 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title HandOnDocker
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article.deck
+
+      section
+        h1 HandsOnDocker
+
+      section
+        h2 Objeto de Investigação
+
+        p Como efetivamente podemos com que determinado produto desenvolvido efetivamente possa chegar à esteira de produção? Como fazer? Qual o formato aceito pela esteira?
+
+        img(src="images/empacotamento.png" style='width: 85%; height: 65%; margin-left:auto; margin-right: auto; margin-botom: 20px; display: block;')
+
+      section
+
+        img(src="images/docker-5.svg" style='width:50%; height:50%; margin: auto;')
+
+      section
+        h2 O que é o Docker?
+
+        p Docker é uma tecnologia de virtualização de processos, em que aplicações são encapsuladas em contêineres e iniciadas como um processo isolado no sistema operacional.
+
+        img(src="images/virt_docker.png" style='width:70%; height:60%; margin-left:auto; margin-right: auto; display: block;')
+
+      section
+        h2 O que é uma Imagem?
+
+        p Uma imagem é uma fôrma que contém todo o software e configurações necessários para que determinada aplicação funcione. Após sua construção ("build") a imagem pode ser iniciada em qualquer computador que possua o Docker instalado.
+
+        img(src="images/docker_images.png")
+
+      section
+        h2 Que imagens existem e onde procurar?
+
+        p O DockerHub e o Quay.Io são grandes fontes de imagens oficiais e também criadas pela comunidade.
+
+        img(src="images/dockerhub.png" style='width:80%; height:50%; margin: auto;')
+
+      section
+        h2 O que é um "Container"?
+
+        p É um processo criado a partir da imagem que em tempo de execução ganha recursos isolados, como memória, rede, disco, etc. É efêmero.
+
+        img(src="images/docker-filesystems-multilayer.png" style='width: 60%; heigth: 60%;')
+
+      section 
+        h2 Ciclo de Vida de Imagens e Contêineres
+
+        p Espera-se que, qualquer mudança, por menor que seja, resulte em uma nova imagem, pois a capacidade de se repetir determinado processo de `deploy` se base no princípio da imutabilidade.
+
+        img(src="images/ciclo_containers.png" style='width:90%; height:40%; margin: auto;')
+
+      section
+        h2 Images
+        img(src="images/bespoke-logo.jpg")
+
+      section
+        h2 Keyboard Interaction
+        h3 Powered by <a href="https://github.com/bespokejs/bespoke-keys">bespoke-keys</a>
+
+      section
+        h2 Touch Interaction
+        h3 Powered by <a href="https://github.com/bespokejs/bespoke-touch">bespoke-touch</a>
+
+      section
+        h2 Responsive Slides
+        h3 Powered by <a href="https://github.com/bespokejs/bespoke-scale">bespoke-scale</a>
+
+      section
+        h2 Bullet List
+        h3 Powered by <a href="https://github.com/bespokejs/bespoke-bullets">bespoke-bullets</a>
+        ul.build.build-items
+          li Bullet 1
+          li Bullet 2
+          li Bullet 3
+
+      section
+        iframe(width="640", height="360", src="https://www.youtube.com/embed/AV3kYPutYfs?rel=0&amp;showinfo=0&amp;controls=0&amp;enablejsapi=1&amp;loop=1&amp;playlist=AV3kYPutYfs", frameborder="0", allowfullscreen, data-volume="0")
+
+      section
+        h2 Syntax Highlighting
+        h3 Powered by <a href="https://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/PrismJS/prism">Prism</a>
+        pre
+          code.language-javascript.
+            (function() {
+              function hanoi(n, a, b, c) {
+                return n ? hanoi(n - 1, a, c, b)
+                    .concat([[a, b]])
+                    .concat(hanoi(n - 1, c, b, a)) : [];
+              }
+              return hanoi(3, 'left', 'right', 'mid')
+                .map(function(d) {
+                  return d[0] + ' -&gt; ' + d[1];
+                });
+            })();
+
+      section(data-bespoke-hash='named-route')
+        h2 Named Route
+        h3 Powered by <a href="https://github.com/bespokejs/bespoke-hash">bespoke-hash</a>
+        p Look up! This route has been named with a <em>data-bespoke-hash</em> attribute.
+      section
+        h2.bullet Just the beginning…
+        ul.build.build-items
+          li Edit <a href="https://pugjs.org">Pug (formerly Jade)</a> markup in <em class="path">src/index.pug</em>
+          li Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em>
+          li Edit JavaScript in <em class="path">src/scripts/main.js</em>
+        br
+        ul.build
+          li
+            strong Enjoy! :)
+            a(href='https://twitter.com/markdalgleish')  -@markdalgleish
+
+    script(src='build/build.js')

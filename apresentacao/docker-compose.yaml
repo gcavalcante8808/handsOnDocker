@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  presentation:
+    image: presentation
+    command: ["gulp","serve"]
+    build: .
+    environment:
+     - PORT=8888
+    ports:
+      - 8888:8888
+      - 35729:35729
+    volumes:
+    - .:/data
+    working_dir: /data
