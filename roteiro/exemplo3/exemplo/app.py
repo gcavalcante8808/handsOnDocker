@@ -22,5 +22,5 @@ def create(db_connection_url, debug_sql=False):
 
 
 if __name__ == '__main__':
-    app = create(db_connection_url='sqlite3:///tmp/db.sqlite3')
+    app = create(db_connection_url='sqlite:////tmp/db.sqlite3')
     run_simple('0.0.0.0', 8000, app, use_reloader=True, use_debugger=True)
