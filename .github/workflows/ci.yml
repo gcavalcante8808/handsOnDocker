@@ -17,6 +17,7 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
 
     - name: Print assumed role
       run: aws sts get-caller-identity
