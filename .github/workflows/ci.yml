@@ -1,0 +1,23 @@
+name: Hello from AWS
+
+on:
+  push:
+
+permissions:
+  id-token: write
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configure AWS credentials
+      environment: staging
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+
+    - name: Print assumed role
+      environment: staging
+      run: aws sts get-caller-identity
