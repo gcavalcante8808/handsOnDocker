@@ -19,3 +19,8 @@ jobs:
 
     - name: Print assumed role
       run: aws sts get-caller-identity
+
+    - name: Describe an ECR enabled resource
+      run: |
+        aws ecr describe-repositories --repository-names gh-enabled-repo
+        aws ecr describe-repositories --repository-names gh-disabled-repo
