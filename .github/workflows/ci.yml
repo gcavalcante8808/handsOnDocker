@@ -8,7 +8,6 @@ permissions:
 
 jobs:
   greeting:
-    environment: staging
     runs-on: ubuntu-latest
 
     steps:
